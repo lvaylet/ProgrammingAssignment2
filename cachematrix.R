@@ -4,18 +4,18 @@
 ## discuss here). Your assignment is to write a pair of functions that cache the
 ## inverse of a matrix.
 
-## > m <- makeCacheMatrix(matrix(rnorm(9),3,3))
+## > m <- makeCacheMatrix(matrix(c(7,0,-3,2,3,4,1,-1,-2),3,3))
 ## > cacheSolve(m)
-## [,1]        [,2]      [,3]
-## [1,]  0.8840004  0.78518642 -1.123824
-## [2,]  0.5097846  0.01398283 -1.709970
-## [3,] -0.3071629 -0.83397520  1.578815
+## [,1] [,2] [,3]
+## [1,]   -2    8   -5
+## [2,]    3  -11    7
+## [3,]    9  -34   21
 ## > cacheSolve(m)
 ## getting cached data
-## [,1]        [,2]      [,3]
-## [1,]  0.8840004  0.78518642 -1.123824
-## [2,]  0.5097846  0.01398283 -1.709970
-## [3,] -0.3071629 -0.83397520  1.578815
+## [,1] [,2] [,3]
+## [1,]   -2    8   -5
+## [2,]    3  -11    7
+## [3,]    9  -34   21
 ## >
 
 ## This function creates a special "matrix" object that can cache its inverse
