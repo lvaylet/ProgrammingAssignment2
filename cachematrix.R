@@ -4,6 +4,7 @@
 ## discuss here). Your assignment is to write a pair of functions that cache the
 ## inverse of a matrix.
 
+## Example:
 ## > m <- makeCacheMatrix(matrix(c(7,0,-3,2,3,4,1,-1,-2),3,3))
 ## > cacheSolve(m)
 ## [,1] [,2] [,3]
@@ -23,13 +24,19 @@
 makeCacheMatrix <- function(x = matrix()) {
   # Initialize inverse matrix to NULL, to compute it on the first call to cacheSolve
   i <- NULL
+
+  # Change value of stored matrix
   set <- function(y) {
-    x <<- y
-    i <<- NULL # Set i to NULL in order to compute it again on the next call to cacheSolve
+    x <<- y # Store new matrix
+    i <<- NULL # Set inverse to NULL in order to compute it again on the next call to cacheSolve
   }
+  # Retrieve value of stored matrix
   get <- function() x
+  # Change value of stored inverse
   setinverse <- function(inverse) i <<- inverse
+  # Retrieve value of stored inverse
   getinverse <- function() i
+
   list(set = set, get = get,
        setinverse = setinverse,
        getinverse = getinverse)
@@ -44,6 +51,7 @@ makeCacheMatrix <- function(x = matrix()) {
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
   i <- x$getinverse()
+  # Get cached data if available (instead of recomputing it)
   if(!is.null(i)) {
     message("getting cached data")
     return(i)
